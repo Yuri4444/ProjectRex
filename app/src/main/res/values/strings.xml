@@ -1,0 +1,30 @@
+<resources>
+    <string name="app_name">ProjectRex</string>
+    <!-- Strings used for fragments for navigation -->
+
+
+    <string name="main_description"> Habitat time:\n Length:\n Weight:\n First found in\n Meaning of the name:</string>
+
+    <!--    Выдвижная панель-->
+    <string name="title_panel">Мир динозавров</string>
+
+    <string name="tabs_all">Все динозавры</string>
+    <string name="tabs_plant">Растения древности</string>
+    <string name="tabs_earth">Доисторическая Земля</string>
+    <string name="tabs_records">Рекорды динозавров</string>
+    <string name="tabs_finds">Находки архиологов</string>
+    <string name="tabs_favor">Любимые динозавры</string>
+    <!-- TODO: Remove or change this placeholder text -->
+
+
+    <string name="ranch">In the course of more than a century of fossil collecting, Museum paleontologists have
+        unearthed fossils from every corner of the globe. But there are some sites so fruitful in fossils that they are visited again
+        and again by the Museum’s fossil hunters, with each generation turning up new and unexpected finds.\n
+        \n
+        One of those sites is New Mexico’s Ghost Ranch, home to four quarries that paleontologists from the Museum have excavated for decades.
+        The remains of animals from the Triassic era, including dinosaurs, reptiles, and fishes, have all been discovered here,
+        often preserved in exquisite condition.  “These animals lived in a very different environment,” says Sterling Nesbitt,
+        a research associate at the Museum who has spent 10 field seasons at the site. “About 212 to 200 million years ago it was marshy.</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
