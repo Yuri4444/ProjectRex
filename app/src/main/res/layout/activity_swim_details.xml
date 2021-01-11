@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <ScrollView
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!--        Мудрю заглавие-->
+            <TextView
+                android:id="@+id/product_nameSwim"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/blueBlack"
+                android:gravity="center"
+                android:text="По умолчанию"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="#FFFFFF"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/blueBlack"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_weight="1"
+                    android:text="@string/main_descriptionSwim"
+                    android:textColor="#FFFFFF"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tv_detailSwim"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:layout_weight="1"
+                    android:text="a\na\n"
+                    android:textColor="#FFFFFF" />
+
+            </LinearLayout>
+
+            <!--        Мудрю заглавие-->
+
+            <ImageView
+                android:id="@+id/photoSwim"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:adjustViewBounds="true"
+                android:scaleType="centerCrop"
+                android:transitionName="photoToAnimate" />
+
+            <TextView
+                android:id="@+id/tv_description1Swim"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="12dp"
+                android:layout_marginEnd="12dp"
+                android:fontFamily="sans-serif-black"
+                android:paddingLeft="10dp"
+                android:paddingTop="10dp"
+                android:paddingRight="10dp"
+                android:textColor="#121212"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+
+                android:id="@+id/tv_description2Swim"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
+
+                android:padding="10dp"
+                android:textColor="#0C0C0C"
+                android:textSize="15sp" />
+
+            <TextView
+                android:id="@+id/tv_takenSwim"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
+                android:layout_marginTop="30dp"
+
+                android:padding="10dp"
+                android:textColor="#0C0C0C"
+                android:textSize="10sp" />
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

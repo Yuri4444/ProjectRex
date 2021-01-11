@@ -9,25 +9,31 @@
         <item
             android:title="@string/tabs_plant"
             android:id="@+id/plant"
-            android:icon="@mipmap/ic_plant">
+            android:icon="@drawable/ic_plant">
         </item>
 
         <item
             android:title="@string/tabs_earth"
             android:id="@+id/earth"
-            android:icon="@mipmap/ic_earth">
+            android:icon="@drawable/ic_earth">
         </item>
 
         <item
             android:title="@string/tabs_records"
             android:id="@+id/records"
-            android:icon="@mipmap/ic_record">
+            android:icon="@drawable/ic_record">
         </item>
 
         <item
             android:title="@string/tabs_finds"
             android:id="@+id/finds"
-            android:icon="@mipmap/ic_finds">
+            android:icon="@drawable/phantom_ranch">
+        </item>
+
+        <item
+            android:title="@string/tabs_skelets"
+            android:id="@+id/skeleton"
+            android:icon="@drawable/skeleton">
         </item>
 
     </group>

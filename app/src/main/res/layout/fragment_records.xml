@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragments.RecordsFragment"
+    android:orientation="vertical"
+    android:background="@color/white">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+<!--        САМЫЕ ПЕРВЫЕ ДИНОЗАВРЫ-->
+
+        <TextView
+            android:gravity="center"
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/records1"
+            android:textSize="17sp"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            />
+
+        <TextView
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:textColor="@color/black"
+            android:text="@string/record_1_textRussia"/>
+
+        <ImageView
+            android:layout_marginTop="10dp"
+            android:scaleType="centerCrop"
+            android:layout_width="wrap_content"
+            android:layout_height="250dp"
+            android:src="@drawable/record_image_one"/>
+
+<!--        САМЫЕ ГОРЯЧИЕ ДИНОЗАВРЫ-->
+        <TextView
+            android:gravity="center"
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/records2"
+            android:textSize="17sp"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            />
+
+        <TextView
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:textColor="@color/black"
+            android:text="@string/record_2_textRussia"/>
+
+        <ImageView
+            android:layout_marginTop="10dp"
+            android:scaleType="centerCrop"
+            android:layout_width="wrap_content"
+            android:layout_height="250dp"
+            android:src="@drawable/record_image_two"/>
+
+<!--        САМЫЕ ХОЛОДОЛЮБИВЫЕ ДИНОЗАВРЫ-->
+        <TextView
+            android:gravity="center"
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/records3"
+            android:textSize="17sp"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            />
+
+        <TextView
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:textColor="@color/black"
+            android:text="@string/record_3_textRussia"/>
+
+        <ImageView
+            android:layout_marginTop="10dp"
+            android:scaleType="centerCrop"
+            android:layout_width="wrap_content"
+            android:layout_height="250dp"
+            android:src="@drawable/record_image_three"/>
+
+
+        <!--        САМЫЕ БЫСТРЫЕ ДИНОЗАВРЫ-->
+        <TextView
+            android:gravity="center"
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/records4"
+            android:textSize="17sp"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            />
+
+        <TextView
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:textColor="@color/black"
+            android:text="@string/record_4_textRussia"/>
+
+        <ImageView
+            android:layout_marginTop="10dp"
+            android:scaleType="centerCrop"
+            android:layout_width="wrap_content"
+            android:layout_height="250dp"
+            android:src="@drawable/record_image_four"/>
+
+
+        <!--        САМЫЕ ЗУБАСТЫЕ ДИНОЗАВРЫ-->
+        <TextView
+            android:gravity="center"
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/records5"
+            android:textSize="17sp"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            />
+
+        <TextView
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:textColor="@color/black"
+            android:text="@string/record_5_textRussia"/>
+
+        <ImageView
+            android:layout_marginTop="10dp"
+            android:scaleType="centerCrop"
+            android:layout_width="wrap_content"
+            android:layout_height="250dp"
+            android:src="@drawable/record_image_five"/>
+
+
+        <!--        САМЫЕ ЯРКИЕ ДИНОЗАВРЫ-->
+        <TextView
+            android:gravity="center"
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/records6"
+            android:textSize="17sp"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            />
+
+        <TextView
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:textColor="@color/black"
+            android:text="@string/record_6_textRussia"/>
+
+        <ImageView
+            android:layout_marginTop="10dp"
+            android:scaleType="centerCrop"
+            android:layout_width="wrap_content"
+            android:layout_height="250dp"
+            android:src="@drawable/record_image_six"/>
+
+
+        <!--        САМЫЕ УМНЫЕ ДИНОЗАВРЫ-->
+        <TextView
+            android:gravity="center"
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/records7"
+            android:textSize="17sp"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            />
+
+        <TextView
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:textColor="@color/black"
+            android:text="@string/record_7_textRussia"/>
+
+        <ImageView
+            android:layout_marginTop="10dp"
+            android:scaleType="centerCrop"
+            android:layout_width="wrap_content"
+            android:layout_height="250dp"
+            android:src="@drawable/record_image_seven"/>
+
+
+        <!--        САМЫЕ БОЛЬШИЕ ДИНОЗАВРЫ-->
+        <TextView
+            android:gravity="center"
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/records8"
+            android:textSize="17sp"
+            android:textStyle="bold"
+            android:textColor="@color/black" />
+
+        <TextView
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:textColor="@color/black"
+            android:text="@string/record_8_textRussia"/>
+
+        <ImageView
+            android:layout_marginTop="10dp"
+            android:scaleType="centerCrop"
+            android:layout_width="wrap_content"
+            android:layout_height="250dp"
+            android:src="@drawable/record_image_eigth"
+            android:layout_marginBottom="80dp"/>
+
+            <TextView
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="15dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/textFromRecords"/>
+
+
+    </LinearLayout>
+</ScrollView>
