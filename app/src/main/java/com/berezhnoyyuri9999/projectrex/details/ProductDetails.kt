@@ -22,10 +22,8 @@ class ProductDetails : AppCompatActivity() {
         val photoUrl = intent.getStringExtra("photo_url")
         Picasso.get().load(photoUrl).into(photo)
 
-        /////////
         val photoCompareRus = intent.getStringExtra("photoCompare")
         Picasso.get().load(photoCompareRus).into(im_compare)
-        /////////
 
         product_name.text = title
         tv_detail.text = detail
