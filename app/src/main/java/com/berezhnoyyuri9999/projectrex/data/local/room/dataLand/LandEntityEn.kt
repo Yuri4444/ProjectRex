@@ -1,13 +1,16 @@
 package com.berezhnoyyuri9999.projectrex.data.local.room.dataLand
 
+import android.os.Parcelable
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
+import kotlinx.android.parcel.Parcelize
 
-@Entity(tableName = "land_table")
-data class LandEntity(
+@Parcelize
+@Entity(tableName = "land_table_en")
+data class LandEntityEn(
 
-    @PrimaryKey
+    @PrimaryKey(autoGenerate = true)
     val id : Int = 0,
 
     @ColumnInfo
@@ -34,6 +37,4 @@ data class LandEntity(
     @ColumnInfo
     val rusCompare : String = ""
 
-
-
-)
+) : Parcelable

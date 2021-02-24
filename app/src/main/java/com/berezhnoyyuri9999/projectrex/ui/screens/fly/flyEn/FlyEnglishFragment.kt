@@ -1,6 +1,5 @@
 package com.berezhnoyyuri9999.projectrex.ui.screens.fly.flyEn
 
-import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -9,10 +8,10 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.berezhnoyyuri9999.projectrex.R
 import com.berezhnoyyuri9999.projectrex.RexClass
+
 import com.berezhnoyyuri9999.projectrex.data.model.ProductFly
 import com.berezhnoyyuri9999.projectrex.ui.screens.fly.FlyAdapter
 import com.berezhnoyyuri9999.projectrex.ui.screens.fly.FlyContract
-import com.berezhnoyyuri9999.projectrex.ui.screens.main.MainActivity
 import kotlinx.android.synthetic.main.fragment_fly.*
 
 class FlyEnglishFragment : Fragment(), FlyContract.FlyView {

@@ -38,20 +38,20 @@ class LandRussianFragment : Fragment(), LandContract.LandView {
         recycler_viewRussian.layoutManager = LinearLayoutManager(activity)
         recycler_viewRussian.adapter = russianAdapter
 
-        presenterLandRu?.fetch()
+        presenterLandRu.fetch()
 
     }
 
     override fun onStart() {
         super.onStart()
 
-        presenterLandRu?.bindView(this)
+        presenterLandRu.bindView(this)
 
     }
 
     override fun onStop() {
         super.onStop()
-        presenterLandRu?.unBindView()
+        presenterLandRu.unBindView()
     }
 
     override fun showLand(list: List<ProductLand>) {

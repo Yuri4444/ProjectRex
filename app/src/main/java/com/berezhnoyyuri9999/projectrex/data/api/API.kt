@@ -14,10 +14,10 @@ interface API {
     @GET("v3/6737e106-7206-45e9-9466-e1490b6bf0d6")
     fun getFlyApiRu(): Single<List<ProductFly>>
 
-    @GET("v3/8151e0a7-d64d-4e22-afe8-ee950c6b9272")
+    @GET("v3/ddfb47d7-9229-43a0-96de-8b539d6f1ca9")
     fun getLandApiEn(): Single<List<ProductLand>>
 
-    @GET("v3/39c1ac0c-d566-4a65-94c4-43c31b64ba39")
+    @GET("v3/9d7936b9-9cac-4b5d-80ac-6b4822efd299")
     fun getLandApiRu(): Single<List<ProductLand>>
 
     @GET("v3/e5a42244-cee2-4b0e-ac3f-0c22153e9cd9")

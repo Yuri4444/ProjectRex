@@ -1,14 +1,16 @@
 package com.berezhnoyyuri9999.projectrex.data.local.room.dataFly
 
+import android.os.Parcelable
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
+import kotlinx.android.parcel.Parcelize
 
+@Parcelize
+@Entity(tableName = "fly_table_ru")
+data class FlyEntityRu(
 
-@Entity(tableName = "fly_table")
-data class FlyEntity(
-
-    @PrimaryKey
+    @PrimaryKey(autoGenerate = true)
     val id : Int = 0,
 
     @ColumnInfo
@@ -32,4 +34,4 @@ data class FlyEntity(
     @ColumnInfo
     val compareFly: String = ""
 
-)
+) : Parcelable

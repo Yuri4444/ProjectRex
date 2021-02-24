@@ -16,12 +16,20 @@ class FlyAdapter : RecyclerView.Adapter<FlyAdapter.ViewHolder>() {
 
     private val productsFly: MutableList<ProductFly> = ArrayList()
 
+//    private val productFlyFromRoom: MutableList<FlyEntity> = ArrayList()
+
     fun setData(newLine : List<ProductFly>) {
         productsFly.clear()
         productsFly.addAll(newLine)
         notifyDataSetChanged()
     }
-
+    //
+//    fun setDataFromRoom(newLine : List<FlyEntity>) {
+//        productFlyFromRoom.clear()
+//        productFlyFromRoom.addAll(newLine)
+//        notifyDataSetChanged()
+//    }
+    //
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val productSwim = productsFly[position]
         Picasso.get().load(productsFly[position].photoUrlFly).into(holder.imageFly)

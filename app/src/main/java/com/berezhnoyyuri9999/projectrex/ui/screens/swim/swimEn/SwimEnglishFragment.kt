@@ -38,17 +38,17 @@ class SwimEnglishFragment : Fragment(), SwimContract.SwimView {
         recyclerViewSwim.layoutManager = LinearLayoutManager(activity)
         recyclerViewSwim.adapter = swimAdapter
 
-        presenterSwimEn?.fetch()
+        presenterSwimEn.fetch()
     }
 
     override fun onStart() {
         super.onStart()
-        presenterSwimEn?.bindView(this)
+        presenterSwimEn.bindView(this)
     }
 
     override fun onStop() {
         super.onStop()
-        presenterSwimEn?.unBindView()
+        presenterSwimEn.unBindView()
     }
 
     override fun showSwim(list: List<ProductSwim>) {

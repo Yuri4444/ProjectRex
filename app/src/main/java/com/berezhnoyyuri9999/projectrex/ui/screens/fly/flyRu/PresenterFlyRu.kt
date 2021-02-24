@@ -39,4 +39,6 @@ class PresenterFlyRu(app: App) : FlyContract.FlyPresenter {
     override fun unBindView() {
         this.view = null
     }
+
+
 }

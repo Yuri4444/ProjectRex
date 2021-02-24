@@ -1,19 +1,15 @@
 package com.berezhnoyyuri9999.projectrex.ui.screens.fly.flyEn
 
 import android.annotation.SuppressLint
+import android.content.Context
+import android.net.ConnectivityManager
 import android.util.Log
-import com.berezhnoyyuri9999.projectrex.RexClass
 import com.berezhnoyyuri9999.projectrex.data.api.App
-import com.berezhnoyyuri9999.projectrex.data.repositories.fly.RepositoryFly
 import com.berezhnoyyuri9999.projectrex.domain.services.Interactor
 import com.berezhnoyyuri9999.projectrex.ui.screens.fly.FlyContract
-import io.reactivex.Scheduler
 import io.reactivex.android.schedulers.AndroidSchedulers
-import io.reactivex.schedulers.Schedulers
 
 class PresenterFlyEn(app : App) : FlyContract.FlyPresenter {
-
-    private var mRepositoryFly : RepositoryFly? = null
 
     private val interactor by lazy {
         Interactor(app)
@@ -41,6 +37,5 @@ class PresenterFlyEn(app : App) : FlyContract.FlyPresenter {
     override fun unBindView() {
         this.view = null
     }
-
 
 }
