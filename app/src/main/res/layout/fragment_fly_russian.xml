@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.screens.fly.flyRu.FlyRussianFragment"
-    android:background="@color/white">
+    android:background="@color/white"
+    tools:context=".ui.screens.fly.flyRu.FlyRussianFragment">
 
     <ImageView
         android:id="@+id/imageView4"
@@ -19,17 +19,17 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
+        android:id="@+id/warningFlyF"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:gravity="center"
+        android:text="@string/stringForLoading"
         android:textColor="@color/white"
         android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        android:id="@+id/worningFlyF"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/stringForLoading" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_viewFlyRussian"

@@ -2,6 +2,7 @@ package com.berezhnoyyuri9999.projectrex.ui.screens.fly.flyRu
 
 import android.annotation.SuppressLint
 import com.berezhnoyyuri9999.projectrex.data.api.App
+import com.berezhnoyyuri9999.projectrex.data.local.room.dataFly.FlyEntityEn
 import com.berezhnoyyuri9999.projectrex.data.model.ProductFly
 import com.berezhnoyyuri9999.projectrex.domain.services.Interactor
 import com.berezhnoyyuri9999.projectrex.ui.screens.fly.FlyContract
@@ -38,6 +39,10 @@ class PresenterFlyRu(app: App) : FlyContract.FlyPresenter {
 
     override fun unBindView() {
         this.view = null
+    }
+
+    override fun addDataToDb(list: FlyEntityEn) {
+
     }
 
 

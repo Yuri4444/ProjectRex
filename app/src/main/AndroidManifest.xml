@@ -24,7 +24,7 @@
             android:name=".details.ProductDetails"
             android:theme="@style/Theme.ProjectRex1"/>
         <activity
-            android:name=".ui.screens.main.MainActivity"
+            android:name=".MainActivity"
             android:label="@string/app_name"
             android:screenOrientation="portrait"
             android:theme="@style/Theme.ProjectRex.NoActionBar">

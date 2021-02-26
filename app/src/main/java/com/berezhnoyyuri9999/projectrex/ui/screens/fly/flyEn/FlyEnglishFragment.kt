@@ -8,13 +8,14 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.berezhnoyyuri9999.projectrex.R
 import com.berezhnoyyuri9999.projectrex.RexClass
-
 import com.berezhnoyyuri9999.projectrex.data.model.ProductFly
 import com.berezhnoyyuri9999.projectrex.ui.screens.fly.FlyAdapter
 import com.berezhnoyyuri9999.projectrex.ui.screens.fly.FlyContract
 import kotlinx.android.synthetic.main.fragment_fly.*
+import java.util.*
 
 class FlyEnglishFragment : Fragment(), FlyContract.FlyView {
+
 
     private val presenterFlyEn by lazy {
         PresenterFlyEn(RexClass.getApp(context))
@@ -25,6 +26,9 @@ class FlyEnglishFragment : Fragment(), FlyContract.FlyView {
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+
+
+
 
 
         return inflater.inflate(R.layout.fragment_fly, container, false)
@@ -48,11 +52,12 @@ class FlyEnglishFragment : Fragment(), FlyContract.FlyView {
     }
 
     override fun showFly(list: List<ProductFly>) {
+        showLoader()
         flyAdapter.setData(list)
     }
 
     override fun showLoader() {
-
+        warningFly.visibility = View.INVISIBLE
     }
 
 }

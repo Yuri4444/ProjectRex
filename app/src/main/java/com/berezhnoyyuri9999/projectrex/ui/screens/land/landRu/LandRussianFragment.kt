@@ -11,7 +11,8 @@ import com.berezhnoyyuri9999.projectrex.RexClass
 import com.berezhnoyyuri9999.projectrex.data.model.ProductLand
 import com.berezhnoyyuri9999.projectrex.ui.screens.land.LandAdapter
 import com.berezhnoyyuri9999.projectrex.ui.screens.land.LandContract
-import kotlinx.android.synthetic.main.fragment_russian.*
+import kotlinx.android.synthetic.main.fragment_land_russian.*
+
 //https://ru.freepik.com/vectors/background
 class LandRussianFragment : Fragment(), LandContract.LandView {
 
@@ -29,7 +30,7 @@ class LandRussianFragment : Fragment(), LandContract.LandView {
         savedInstanceState: Bundle?
     ): View? {
 
-        return inflater.inflate(R.layout.fragment_russian, container, false)
+        return inflater.inflate(R.layout.fragment_land_russian, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

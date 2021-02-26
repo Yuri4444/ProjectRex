@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/mainFragment">
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.berezhnoyyuri9999.projectrex.ui.screens.main.MainFragment"
+        android:label="MainFragment"
+        tools:layout="@layout/fragment_main">
+        <action
+            android:id="@+id/action_mainFragment_to_flyEnglishFragment"
+            app:destination="@id/flyEnglishFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_flyRussianFragment"
+            app:destination="@id/flyRussianFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_landEnglishFragment"
+            app:destination="@id/landEnglishFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_landRussianFragment"
+            app:destination="@id/landRussianFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_swimEnglishFragment"
+            app:destination="@id/swimEnglishFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_swimRussianFragment"
+            app:destination="@id/swimRussianFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/flyEnglishFragment"
+        android:name="com.berezhnoyyuri9999.projectrex.ui.screens.fly.flyEn.FlyEnglishFragment"
+        android:label="fragment_fly"
+        tools:layout="@layout/fragment_fly" />
+    <fragment
+        android:id="@+id/flyRussianFragment"
+        android:name="com.berezhnoyyuri9999.projectrex.ui.screens.fly.flyRu.FlyRussianFragment"
+        android:label="fragment_fly_russian"
+        tools:layout="@layout/fragment_fly_russian" />
+    <fragment
+        android:id="@+id/landRussianFragment"
+        android:name="com.berezhnoyyuri9999.projectrex.ui.screens.land.landRu.LandRussianFragment"
+        android:label="fragment_russian"
+        tools:layout="@layout/fragment_land_russian" />
+    <fragment
+        android:id="@+id/swimEnglishFragment"
+        android:name="com.berezhnoyyuri9999.projectrex.ui.screens.swim.swimEn.SwimEnglishFragment"
+        android:label="fragment_swim"
+        tools:layout="@layout/fragment_swim" />
+    <fragment
+        android:id="@+id/swimRussianFragment"
+        android:name="com.berezhnoyyuri9999.projectrex.ui.screens.swim.swimRu.SwimRussianFragment"
+        android:label="fragment_swim_russian"
+        tools:layout="@layout/fragment_swim_russian" />
+    <fragment
+        android:id="@+id/landEnglishFragment"
+        android:name="com.berezhnoyyuri9999.projectrex.ui.screens.land.landEn.LandEnglishFragment"
+        android:label="fragment_main"
+        tools:layout="@layout/fragment_land" />
+</navigation>

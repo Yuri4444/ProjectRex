@@ -21,6 +21,8 @@ class Interactor(private val app: App) {
 
     private val net by lazy { app.getNetRepository() }
 
+
+
     fun getFlyEn(): Single<List<ProductFly>> {
         return net.getProductFlyEn()
             .subscribeOn(Schedulers.io())
@@ -82,7 +84,7 @@ class Interactor(private val app: App) {
             .subscribeOn(Schedulers.io())
     }
 
-    fun insertSwimEn(note : SwimEntityRu) : Single<Boolean> {
+    fun insertSwimRu(note : SwimEntityRu) : Single<Boolean> {
         return room.insertSwimRu(note)
             .subscribeOn(Schedulers.io())
     }

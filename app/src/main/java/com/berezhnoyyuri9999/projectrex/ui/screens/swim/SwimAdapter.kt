@@ -24,7 +24,7 @@ class SwimAdapter : RecyclerView.Adapter<SwimAdapter.ViewHolder>() {
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val productSwim = productsSwim[position]
-        Picasso.get().load(productsSwim[position].photoUrlSwim).into(holder.imageSwim)
+        Picasso.get().load(productSwim.photoUrlSwim).into(holder.imageSwim)
         holder.titleSwim.text = productSwim.titleSwim
         holder.detailsSwim.text = productSwim.detailSwim
         holder.description1Swim.text = productSwim.description1Swim

@@ -2,6 +2,7 @@ package com.berezhnoyyuri9999.projectrex
 
 import android.app.Application
 import android.content.Context
+import android.util.Log
 import com.berezhnoyyuri9999.projectrex.data.api.App
 import com.berezhnoyyuri9999.projectrex.data.api.RetrofitManager
 import com.berezhnoyyuri9999.projectrex.data.local.room.AppRoomDatabase
@@ -12,7 +13,7 @@ import com.berezhnoyyuri9999.projectrex.data.repositories.Repository
 class RexClass : Application(), App {
 
     private val net by lazy { NetRepositoryImpl(RetrofitManager(this)) }
-    private lateinit var database: DatabaseRepository
+    lateinit var database: DatabaseRepository
 
 
     override fun onCreate() {

@@ -12,10 +12,8 @@ import com.berezhnoyyuri9999.projectrex.data.local.room.dataSwim.SwimEntityEn
 import com.berezhnoyyuri9999.projectrex.data.local.room.dataSwim.SwimEntityRu
 
 
-@Database(entities = [FlyEntityEn::class, FlyEntityRu::class,
-                     LandEntityEn::class, LandEntityRu::class,
-                     SwimEntityEn::class, SwimEntityRu::class], version = 1, exportSchema = false)
-
+@Database(entities = [FlyEntityEn::class, FlyEntityRu::class, LandEntityEn::class,
+                      LandEntityRu::class, SwimEntityEn::class, SwimEntityRu::class], version = 1, exportSchema = false)
 abstract class AppRoomDatabase : RoomDatabase() {
 
     abstract fun getAppRoomDao() : GlobalDao

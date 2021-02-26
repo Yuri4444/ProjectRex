@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/card_viewSwim"
     android:layout_width="match_parent"
-    android:layout_height="300dp"
-    android:id="@+id/card_viewSwim">
+    android:layout_height="300dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -35,7 +34,6 @@
             app:layout_constraintTop_toTopOf="@+id/titleSkeleton" />
 
         <TextView
-            android:text="Android"
             android:id="@+id/titleSkeleton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -47,43 +45,9 @@
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+            app:layout_constraintStart_toStartOf="parent"
+            tools:text="Android" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-
-<!--<?xml version="1.0" encoding="utf-8"?>-->
-<!--<androidx.constraintlayout.widget.ConstraintLayout-->
-<!--    xmlns:android="http://schemas.android.com/apk/res/android"-->
-<!--    xmlns:app="http://schemas.android.com/apk/res-auto"-->
-<!--    xmlns:tools="http://schemas.android.com/tools"-->
-<!--    android:layout_width="match_parent"-->
-<!--    android:layout_height="340dp">-->
-
-<!--    <ImageView-->
-<!--        android:id="@+id/photoSkeleton"-->
-<!--        android:layout_width="0dp"-->
-<!--        android:layout_height="300dp"-->
-<!--        app:layout_constraintBottom_toTopOf="@+id/titleSkeleton"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintTop_toTopOf="parent"-->
-<!--        app:srcCompat="@drawable/skeleton" />-->
-
-<!--    <TextView-->
-
-<!--        android:id="@+id/titleSkeleton"-->
-<!--        android:layout_width="0dp"-->
-<!--        android:layout_height="40dp"-->
-<!--        android:fontFamily="@font/russo_one"-->
-<!--        android:gravity="center"-->
-<!--        android:text="TextView"-->
-<!--        android:textColor="#232323"-->
-<!--        android:textSize="20sp"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintTop_toBottomOf="@+id/photoSkeleton" />-->
-<!--</androidx.constraintlayout.widget.ConstraintLayout>-->

@@ -5,6 +5,7 @@ import android.content.Context
 import android.net.ConnectivityManager
 import android.util.Log
 import com.berezhnoyyuri9999.projectrex.data.api.App
+import com.berezhnoyyuri9999.projectrex.data.local.room.dataFly.FlyEntityEn
 import com.berezhnoyyuri9999.projectrex.domain.services.Interactor
 import com.berezhnoyyuri9999.projectrex.ui.screens.fly.FlyContract
 import io.reactivex.android.schedulers.AndroidSchedulers
@@ -36,6 +37,17 @@ class PresenterFlyEn(app : App) : FlyContract.FlyPresenter {
 
     override fun unBindView() {
         this.view = null
+    }
+
+    @SuppressLint("CheckResult")
+    override fun addDataToDb(list: FlyEntityEn) {
+        interactor.insertFlyEn(list)
+            .observeOn(AndroidSchedulers.mainThread())
+            .subscribe({
+
+            }, {
+
+            })
     }
 
 }

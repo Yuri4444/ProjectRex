@@ -52,11 +52,12 @@ class SwimRussianFragment : Fragment(), SwimContract.SwimView {
     }
 
     override fun showSwim(list: List<ProductSwim>) {
+        showLoader()
         swimAdapter.setData(list)
     }
 
     override fun showLoader() {
-
+        warningSwimR.visibility = View.INVISIBLE
     }
 
 

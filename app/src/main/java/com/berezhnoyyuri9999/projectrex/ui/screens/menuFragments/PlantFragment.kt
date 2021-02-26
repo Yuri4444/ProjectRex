@@ -9,6 +9,7 @@ import com.berezhnoyyuri9999.projectrex.R
 
 
 class PlantFragment : Fragment() {
+
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
 
         return inflater.inflate(R.layout.fragment_plant, container, false)

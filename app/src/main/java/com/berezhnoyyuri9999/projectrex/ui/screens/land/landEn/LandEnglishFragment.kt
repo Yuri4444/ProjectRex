@@ -11,7 +11,7 @@ import com.berezhnoyyuri9999.projectrex.RexClass
 import com.berezhnoyyuri9999.projectrex.data.model.ProductLand
 import com.berezhnoyyuri9999.projectrex.ui.screens.land.LandAdapter
 import com.berezhnoyyuri9999.projectrex.ui.screens.land.LandContract
-import kotlinx.android.synthetic.main.fragment_main.*
+import kotlinx.android.synthetic.main.fragment_land.*
 
 class LandEnglishFragment : Fragment(), LandContract.LandView {
 
@@ -26,7 +26,7 @@ class LandEnglishFragment : Fragment(), LandContract.LandView {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_main, container, false)
+        return inflater.inflate(R.layout.fragment_land, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

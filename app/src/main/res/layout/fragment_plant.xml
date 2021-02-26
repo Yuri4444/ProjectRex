@@ -1,20 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.screens.menuFragments.PlantFragment"
+    android:background="@color/white"
     android:orientation="vertical"
-    android:background="@color/white">
+    tools:context=".ui.screens.menuFragments.PlantFragment">
 
     <LinearLayout
-        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
 
-
-        <!--        wollemia-->
         <TextView
             android:layout_width="match_parent"
             android:layout_height="50dp"
@@ -27,28 +24,25 @@
             android:textStyle="bold" />
 
         <ImageView
-            android:scaleType="centerCrop"
-            android:src="@drawable/wollemia"
             android:layout_width="match_parent"
-            android:layout_height="300dp"/>
+            android:layout_height="300dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/wollemia" />
 
         <TextView
-            android:layout_marginTop="15dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="10dp"
             android:text="@string/plant_wollemia"
             android:textColor="@color/black"
-            android:textSize="16sp"
-            android:layout_marginStart="10dp"
-            android:layout_marginEnd="10dp" />
+            android:textSize="16sp" />
 
-
-
-        <!--        Cooksonia-->
         <TextView
-            android:layout_marginTop="15dp"
             android:layout_width="match_parent"
             android:layout_height="50dp"
+            android:layout_marginTop="15dp"
             android:background="@color/greenBlack"
             android:fontFamily="@font/allerta"
             android:gravity="center"
@@ -58,27 +52,25 @@
             android:textStyle="bold" />
 
         <ImageView
-            android:scaleType="centerCrop"
-            android:src="@drawable/cooksonia"
             android:layout_width="match_parent"
-            android:layout_height="300dp"/>
+            android:layout_height="300dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/cooksonia" />
 
         <TextView
-            android:layout_marginTop="15dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="10dp"
             android:text="@string/plant_cooksonia"
             android:textColor="@color/black"
-            android:textSize="16sp"
-            android:layout_marginStart="10dp"
-            android:layout_marginEnd="10dp" />
+            android:textSize="16sp" />
 
-
-        <!--        lepidodendron-->
         <TextView
-            android:layout_marginTop="15dp"
             android:layout_width="match_parent"
             android:layout_height="50dp"
+            android:layout_marginTop="15dp"
             android:background="@color/greenBlack"
             android:fontFamily="@font/allerta"
             android:gravity="center"
@@ -88,25 +80,24 @@
             android:textStyle="bold" />
 
         <ImageView
-            android:src="@drawable/lepidodendron"
             android:layout_width="match_parent"
-            android:layout_height="300dp"/>
+            android:layout_height="300dp"
+            android:src="@drawable/lepidodendron" />
 
         <TextView
-            android:layout_marginTop="15dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="10dp"
             android:text="@string/plant_lepidodendron"
             android:textColor="@color/black"
-            android:textSize="16sp"
-            android:layout_marginStart="10dp"
-            android:layout_marginEnd="10dp" />
+            android:textSize="16sp" />
 
-        <!--        araucarioxylon_arizonicum-->
         <TextView
-            android:layout_marginTop="15dp"
             android:layout_width="match_parent"
             android:layout_height="50dp"
+            android:layout_marginTop="15dp"
             android:background="@color/greenBlack"
             android:fontFamily="@font/allerta"
             android:gravity="center"
@@ -116,27 +107,25 @@
             android:textStyle="bold" />
 
         <ImageView
-            android:scaleType="centerCrop"
-            android:src="@drawable/araucarioxylon_arizonicum"
             android:layout_width="match_parent"
-            android:layout_height="300dp"/>
+            android:layout_height="300dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/araucarioxylon_arizonicum" />
 
         <TextView
-            android:layout_marginTop="10dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
             android:text="@string/plant_araucarioxylon_arizonicum"
             android:textColor="@color/black"
-            android:textSize="16sp"
-            android:layout_marginStart="10dp"
-            android:layout_marginEnd="10dp" />
+            android:textSize="16sp" />
 
-
-        <!--        glossopteris-->
         <TextView
-            android:layout_marginTop="15dp"
             android:layout_width="match_parent"
             android:layout_height="50dp"
+            android:layout_marginTop="15dp"
             android:background="@color/greenBlack"
             android:fontFamily="@font/allerta"
             android:gravity="center"
@@ -146,26 +135,25 @@
             android:textStyle="bold" />
 
         <ImageView
-            android:scaleType="centerCrop"
-            android:src="@drawable/glossopteris"
             android:layout_width="match_parent"
-            android:layout_height="300dp"/>
+            android:layout_height="300dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/glossopteris" />
 
         <TextView
-            android:layout_marginTop="15dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="10dp"
             android:text="@string/plant_glossopteris"
             android:textColor="@color/black"
-            android:textSize="16sp"
-            android:layout_marginStart="10dp"
-            android:layout_marginEnd="10dp" />
+            android:textSize="16sp" />
 
-        <!--        prototaxites-->
         <TextView
-            android:layout_marginTop="15dp"
             android:layout_width="match_parent"
             android:layout_height="50dp"
+            android:layout_marginTop="15dp"
             android:background="@color/greenBlack"
             android:fontFamily="@font/allerta"
             android:gravity="center"
@@ -175,27 +163,25 @@
             android:textStyle="bold" />
 
         <ImageView
-            android:scaleType="centerCrop"
-            android:src="@drawable/prototaxites"
             android:layout_width="match_parent"
-            android:layout_height="300dp"/>
+            android:layout_height="300dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/prototaxites" />
 
         <TextView
-            android:layout_marginTop="15dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="10dp"
             android:text="@string/plant_prototaxites"
             android:textColor="@color/black"
-            android:textSize="16sp"
-            android:layout_marginStart="10dp"
-            android:layout_marginEnd="10dp" />
-
-        <!--        Araucaria mirabilis-->
+            android:textSize="16sp" />
 
         <TextView
-            android:layout_marginTop="15dp"
             android:layout_width="match_parent"
             android:layout_height="50dp"
+            android:layout_marginTop="15dp"
             android:background="@color/greenBlack"
             android:fontFamily="@font/allerta"
             android:gravity="center"
@@ -206,20 +192,19 @@
 
         <ImageView
 
-            android:src="@drawable/araucaria_mirabilis"
             android:layout_width="match_parent"
-            android:layout_height="300dp"/>
+            android:layout_height="300dp"
+            android:src="@drawable/araucaria_mirabilis" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/plant_araucaria"
-            android:textColor="@color/black"
-            android:textSize="16sp"
             android:layout_marginStart="10dp"
             android:layout_marginEnd="10dp"
-            android:layout_marginBottom="100dp"/>
-
+            android:layout_marginBottom="100dp"
+            android:text="@string/plant_araucaria"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
 
     </LinearLayout>
 

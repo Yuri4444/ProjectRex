@@ -1,14 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
 
     <ScrollView
-
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
@@ -17,7 +15,6 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <!--        Мудрю заглавие-->
             <TextView
                 android:id="@+id/product_name"
                 android:layout_width="match_parent"
@@ -38,9 +35,9 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
+                    android:layout_marginStart="10dp"
                     android:layout_marginTop="5dp"
-                    android:layout_marginRight="5dp"
+                    android:layout_marginEnd="5dp"
                     android:layout_marginBottom="5dp"
                     android:layout_weight="1"
                     android:text="@string/main_descriptionEnglish"
@@ -53,12 +50,10 @@
                     android:layout_height="wrap_content"
                     android:layout_margin="5dp"
                     android:layout_weight="1"
-                    android:text="a\na\n"
-                    android:textColor="#FFFFFF" />
+                    android:textColor="#FFFFFF"
+                    tools:text="a\na\n" />
 
             </LinearLayout>
-
-            <!--        Мудрю заглавие-->
 
             <ImageView
                 android:id="@+id/photo"
@@ -78,29 +73,28 @@
                 android:paddingLeft="10dp"
                 android:paddingTop="10dp"
                 android:paddingRight="10dp"
-                android:textColor="#121212"
+                android:textColor="@color/black"
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
             <ImageView
-                android:layout_marginEnd="15dp"
-                android:layout_marginStart="15dp"
-                android:layout_marginTop="15dp"
-                android:scaleType="centerCrop"
-                android:adjustViewBounds="true"
                 android:id="@+id/im_compare"
                 android:layout_width="match_parent"
-                android:layout_height="260dp"/>
+                android:layout_height="260dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="15dp"
+                android:adjustViewBounds="true"
+                android:scaleType="centerCrop" />
 
             <TextView
-
                 android:id="@+id/tv_description2"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_margin="10dp"
                 android:fontFamily="sans-serif"
                 android:padding="10dp"
-                android:textColor="#0C0C0C"
+                android:textColor="@color/black"
                 android:textSize="15sp" />
 
             <TextView
@@ -111,10 +105,10 @@
                 android:layout_marginTop="30dp"
                 android:fontFamily="sans-serif"
                 android:padding="10dp"
-                android:textColor="#0C0C0C"
-                android:textSize="10sp" />
+                android:textColor="@color/black" />
 
         </LinearLayout>
+
     </ScrollView>
 
 </LinearLayout>
