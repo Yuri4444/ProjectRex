@@ -3,6 +3,7 @@ package com.berezhnoyyuri9999.projectrex.data.api
 import com.berezhnoyyuri9999.projectrex.data.model.ProductFly
 import com.berezhnoyyuri9999.projectrex.data.model.ProductLand
 import com.berezhnoyyuri9999.projectrex.data.model.ProductSwim
+import io.reactivex.Observable
 import io.reactivex.Single
 import retrofit2.http.GET
 
@@ -12,7 +13,7 @@ interface API {
     fun getFlyApiEn(): Single<List<ProductFly>>
 
     @GET("v3/6737e106-7206-45e9-9466-e1490b6bf0d6")
-    fun getFlyApiRu(): Single<List<ProductFly>>
+    fun getFlyApiRu(): Observable<List<ProductFly>>
 
     @GET("v3/ddfb47d7-9229-43a0-96de-8b539d6f1ca9")
     fun getLandApiEn(): Single<List<ProductLand>>

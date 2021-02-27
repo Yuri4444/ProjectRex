@@ -3,35 +3,33 @@ package com.berezhnoyyuri9999.projectrex.data.local.room.dataFly
 import android.os.Parcelable
 import androidx.room.ColumnInfo
 import androidx.room.Entity
+import androidx.room.Index
 import androidx.room.PrimaryKey
 import kotlinx.android.parcel.Parcelize
 
 @Parcelize
 @Entity(tableName = "fly_table_ru")
 data class FlyEntityRu(
-
-    @PrimaryKey(autoGenerate = true)
-    val id : Int = 0,
+    @PrimaryKey
+    @ColumnInfo
+    var titleFly: String = "",
 
     @ColumnInfo
-    val titleFly: String = "",
+    var photoUrlFly: String = "",
 
     @ColumnInfo
-    val photoUrlFly: String = "",
+    var detailFly: String = "",
 
     @ColumnInfo
-    val detailFly: String = "",
+    var description1Fly: String = "",
 
     @ColumnInfo
-    val description1Fly: String = "",
+    var description2Fly: String = "",
 
     @ColumnInfo
-    val description2Fly: String = "",
+    var takenFly: String = "",
 
     @ColumnInfo
-    val takenFly: String = "",
-
-    @ColumnInfo
-    val compareFly: String = ""
+    var compareFly: String = ""
 
 ) : Parcelable

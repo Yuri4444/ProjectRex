@@ -5,6 +5,7 @@ import com.berezhnoyyuri9999.projectrex.data.api.RetrofitManager
 import com.berezhnoyyuri9999.projectrex.data.model.ProductFly
 import com.berezhnoyyuri9999.projectrex.data.model.ProductLand
 import com.berezhnoyyuri9999.projectrex.data.model.ProductSwim
+import io.reactivex.Observable
 import io.reactivex.Single
 
 class NetRepositoryImpl(private val netManager: RetrofitManager) :
@@ -16,7 +17,7 @@ class NetRepositoryImpl(private val netManager: RetrofitManager) :
         return api.getFlyApiEn()
     }
 
-    override fun getProductFlyRu(): Single<List<ProductFly>> {
+    override fun getProductFlyRu(): Observable<List<ProductFly>> {
         return api.getFlyApiRu()
     }
 
@@ -35,6 +36,5 @@ class NetRepositoryImpl(private val netManager: RetrofitManager) :
     override fun getProductSwimRu(): Single<List<ProductSwim>> {
         return api.getSwimApiRu()
     }
-
 
 }

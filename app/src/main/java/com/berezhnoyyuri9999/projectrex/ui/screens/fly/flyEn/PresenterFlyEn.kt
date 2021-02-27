@@ -1,8 +1,6 @@
 package com.berezhnoyyuri9999.projectrex.ui.screens.fly.flyEn
 
 import android.annotation.SuppressLint
-import android.content.Context
-import android.net.ConnectivityManager
 import android.util.Log
 import com.berezhnoyyuri9999.projectrex.data.api.App
 import com.berezhnoyyuri9999.projectrex.data.local.room.dataFly.FlyEntityEn
@@ -21,13 +19,13 @@ class PresenterFlyEn(app : App) : FlyContract.FlyPresenter {
     @SuppressLint("CheckResult")
     override fun fetch() {
 
-        interactor.getFlyEn()
-            .observeOn(AndroidSchedulers.mainThread())
-            .subscribe({
-                view?.showFly(it)
-            }, {
-                Log.e("Error", "${it.message}")
-            })
+//        interactor.getFlyEn()
+//            .observeOn(AndroidSchedulers.mainThread())
+//            .subscribe({
+//                view?.showFly(it)
+//            }, {
+//                Log.e("Error", "${it.message}")
+//            })
 
     }
 
@@ -41,13 +39,13 @@ class PresenterFlyEn(app : App) : FlyContract.FlyPresenter {
 
     @SuppressLint("CheckResult")
     override fun addDataToDb(list: FlyEntityEn) {
-        interactor.insertFlyEn(list)
-            .observeOn(AndroidSchedulers.mainThread())
-            .subscribe({
-
-            }, {
-
-            })
+//        interactor.insertFlyEn(list)
+//            .observeOn(AndroidSchedulers.mainThread())
+//            .subscribe({
+//
+//            }, {
+//
+//            })
     }
 
 }

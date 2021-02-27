@@ -10,4 +10,6 @@ interface App {
 
     fun getRoomRepository() : DatabaseRepository
 
+    fun getRepository(): Repository
+
 }

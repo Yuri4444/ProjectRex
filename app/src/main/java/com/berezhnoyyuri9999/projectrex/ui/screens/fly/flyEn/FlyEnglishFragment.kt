@@ -8,11 +8,10 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.berezhnoyyuri9999.projectrex.R
 import com.berezhnoyyuri9999.projectrex.RexClass
-import com.berezhnoyyuri9999.projectrex.data.model.ProductFly
+import com.berezhnoyyuri9999.projectrex.data.local.room.dataFly.FlyEntityRu
 import com.berezhnoyyuri9999.projectrex.ui.screens.fly.FlyAdapter
 import com.berezhnoyyuri9999.projectrex.ui.screens.fly.FlyContract
 import kotlinx.android.synthetic.main.fragment_fly.*
-import java.util.*
 
 class FlyEnglishFragment : Fragment(), FlyContract.FlyView {
 
@@ -51,7 +50,7 @@ class FlyEnglishFragment : Fragment(), FlyContract.FlyView {
         presenterFlyEn.unBindView()
     }
 
-    override fun showFly(list: List<ProductFly>) {
+    override fun showFly(list: List<FlyEntityRu>) {
         showLoader()
         flyAdapter.setData(list)
     }
