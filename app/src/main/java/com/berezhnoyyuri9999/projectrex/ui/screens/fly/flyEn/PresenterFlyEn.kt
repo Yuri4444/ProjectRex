@@ -3,12 +3,12 @@ package com.berezhnoyyuri9999.projectrex.ui.screens.fly.flyEn
 import android.annotation.SuppressLint
 import android.util.Log
 import com.berezhnoyyuri9999.projectrex.data.api.App
-import com.berezhnoyyuri9999.projectrex.data.local.room.dataFly.FlyEntityEn
 import com.berezhnoyyuri9999.projectrex.domain.services.Interactor
 import com.berezhnoyyuri9999.projectrex.ui.screens.fly.FlyContract
 import io.reactivex.android.schedulers.AndroidSchedulers
+import io.reactivex.schedulers.Schedulers
 
-class PresenterFlyEn(app : App) : FlyContract.FlyPresenter {
+class PresenterFlyEn(var app: App) : FlyContract.FlyPresenter {
 
     private val interactor by lazy {
         Interactor(app)
@@ -18,14 +18,15 @@ class PresenterFlyEn(app : App) : FlyContract.FlyPresenter {
 
     @SuppressLint("CheckResult")
     override fun fetch() {
-
-//        interactor.getFlyEn()
-//            .observeOn(AndroidSchedulers.mainThread())
-//            .subscribe({
-//                view?.showFly(it)
-//            }, {
-//                Log.e("Error", "${it.message}")
-//            })
+        interactor.getFlyEn()
+            .subscribeOn(Schedulers.io())
+            .observeOn(AndroidSchedulers.mainThread())
+            .subscribe({
+                Log.e("SUCCESS", it.toString())
+                view?.showFly(it)
+            }, {
+                Log.e("ERROR", it.message ?: "")
+            })
 
     }
 
@@ -35,17 +36,6 @@ class PresenterFlyEn(app : App) : FlyContract.FlyPresenter {
 
     override fun unBindView() {
         this.view = null
-    }
-
-    @SuppressLint("CheckResult")
-    override fun addDataToDb(list: FlyEntityEn) {
-//        interactor.insertFlyEn(list)
-//            .observeOn(AndroidSchedulers.mainThread())
-//            .subscribe({
-//
-//            }, {
-//
-//            })
     }
 
 }

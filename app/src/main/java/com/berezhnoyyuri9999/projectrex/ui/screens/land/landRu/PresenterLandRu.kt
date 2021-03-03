@@ -1,15 +1,12 @@
 package com.berezhnoyyuri9999.projectrex.ui.screens.land.landRu
 
 import android.annotation.SuppressLint
+import android.util.Log
 import com.berezhnoyyuri9999.projectrex.data.api.App
-import com.berezhnoyyuri9999.projectrex.data.model.ProductLand
 import com.berezhnoyyuri9999.projectrex.domain.services.Interactor
 import com.berezhnoyyuri9999.projectrex.ui.screens.land.LandContract
-import com.google.gson.Gson
 import io.reactivex.android.schedulers.AndroidSchedulers
-import org.jetbrains.anko.doAsync
-import org.jetbrains.anko.uiThread
-import java.net.URL
+import io.reactivex.schedulers.Schedulers
 
 class PresenterLandRu(app : App) : LandContract.LandPresenter {
 
@@ -21,13 +18,17 @@ class PresenterLandRu(app : App) : LandContract.LandPresenter {
 
     @SuppressLint("CheckResult")
     override fun fetch() {
+
         interactor.getLandRu()
+            .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe({
+                Log.e("SUCCESS", it.toString())
                 view?.showLand(it)
-            },{
-
+            }, {
+                Log.e("ERROR", it.message ?: "")
             })
+
     }
 
     override fun bindView(view: LandContract.LandView) {

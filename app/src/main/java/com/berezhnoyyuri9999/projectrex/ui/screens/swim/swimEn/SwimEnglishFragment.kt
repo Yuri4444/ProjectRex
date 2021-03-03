@@ -1,5 +1,6 @@
 package com.berezhnoyyuri9999.projectrex.ui.screens.swim.swimEn
-//https://run.mocky.io/v3/29a9352e-0e82-4222-8a95-7cbce2935d9a
+
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -8,12 +9,12 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.berezhnoyyuri9999.projectrex.R
 import com.berezhnoyyuri9999.projectrex.RexClass
-import com.berezhnoyyuri9999.projectrex.data.model.ProductSwim
+import com.berezhnoyyuri9999.projectrex.data.local.room.GlobalEntity
+import com.berezhnoyyuri9999.projectrex.details.SwimActivityDetails
 import com.berezhnoyyuri9999.projectrex.ui.screens.swim.SwimAdapter
 import com.berezhnoyyuri9999.projectrex.ui.screens.swim.SwimContract
 import kotlinx.android.synthetic.main.fragment_swim.*
 
-//typealias kotlin
 class SwimEnglishFragment : Fragment(), SwimContract.SwimView {
 
     private val presenterSwimEn by lazy {
@@ -21,7 +22,16 @@ class SwimEnglishFragment : Fragment(), SwimContract.SwimView {
     }
 
     private val swimAdapter by lazy {
-        SwimAdapter()
+        SwimAdapter { pos, item ->
+            val intent = Intent(context, SwimActivityDetails::class.java)
+            intent.putExtra("titleSwim", item.title)
+            intent.putExtra("detailSwim", item.detail)
+            intent.putExtra("description1Swim", item.description1)
+            intent.putExtra("description2Swim", item.description2)
+            intent.putExtra("photo_urlSwim", item.photoUrl)
+            intent.putExtra("takenSwim", item.taken)
+            startActivity(intent)
+        }
     }
 
     override fun onCreateView(
@@ -51,7 +61,7 @@ class SwimEnglishFragment : Fragment(), SwimContract.SwimView {
         presenterSwimEn.unBindView()
     }
 
-    override fun showSwim(list: List<ProductSwim>) {
+    override fun showSwim(list: List<GlobalEntity>) {
         showLoader()
         swimAdapter.setData(list)
     }

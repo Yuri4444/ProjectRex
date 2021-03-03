@@ -4,11 +4,10 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
-import com.berezhnoyyuri9999.projectrex.data.local.room.dataFly.FlyEntityRu
 
 
 @Database(
-    entities = [FlyEntityRu::class],
+    entities = [GlobalEntity::class],
     version = 1,
     exportSchema = false
 )

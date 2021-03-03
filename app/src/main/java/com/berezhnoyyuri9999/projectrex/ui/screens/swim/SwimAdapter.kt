@@ -1,6 +1,5 @@
 package com.berezhnoyyuri9999.projectrex.ui.screens.swim
 
-import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -8,15 +7,14 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.berezhnoyyuri9999.projectrex.R
-import com.berezhnoyyuri9999.projectrex.data.model.ProductSwim
-import com.berezhnoyyuri9999.projectrex.details.SwimActivityDetails
+import com.berezhnoyyuri9999.projectrex.data.local.room.GlobalEntity
 import com.squareup.picasso.Picasso
 
-class SwimAdapter : RecyclerView.Adapter<SwimAdapter.ViewHolder>() {
+class SwimAdapter(val clickListener: (Int, GlobalEntity) -> Unit) : RecyclerView.Adapter<SwimAdapter.ViewHolder>() {
 
-    private val productsSwim: MutableList<ProductSwim> = ArrayList()
+    private val productsSwim: MutableList<GlobalEntity> = ArrayList()
 
-    fun setData(newList: List<ProductSwim>) {
+    fun setData(newList: List<GlobalEntity>) {
         productsSwim.clear()
         productsSwim.addAll(newList)
         notifyDataSetChanged()
@@ -24,38 +22,22 @@ class SwimAdapter : RecyclerView.Adapter<SwimAdapter.ViewHolder>() {
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val productSwim = productsSwim[position]
-        Picasso.get().load(productSwim.photoUrlSwim).into(holder.imageSwim)
-        holder.titleSwim.text = productSwim.titleSwim
-        holder.detailsSwim.text = productSwim.detailSwim
-        holder.description1Swim.text = productSwim.description1Swim
-        holder.description2Swim.text = productSwim.description2Swim
-        holder.takenSwim.text = productSwim.takenSwim
+        Picasso.get().load(productSwim.photoUrl).into(holder.imageSwim)
+        holder.titleSwim.text = productSwim.title
+        holder.detailsSwim.text = productSwim.detail
+        holder.description1Swim.text = productSwim.description1
+        holder.description2Swim.text = productSwim.description2
+        holder.takenSwim.text = productSwim.taken
+
+        holder.itemView.setOnClickListener {
+            clickListener.invoke(holder.adapterPosition, productsSwim[holder.adapterPosition])
+        }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val viewSwim =
-            LayoutInflater.from(parent.context).inflate(R.layout.product_row_swim, parent, false)
-        val holderSwim = ViewHolder(viewSwim)
-        viewSwim.setOnClickListener {
-            val intent = Intent(parent.context, SwimActivityDetails::class.java)
-            intent.putExtra("titleSwim", productsSwim[holderSwim.adapterPosition].titleSwim)
-            intent.putExtra("detailSwim", productsSwim[holderSwim.adapterPosition].detailSwim)
-            intent.putExtra(
-                "description1Swim",
-                productsSwim[holderSwim.adapterPosition].description1Swim
-            )
-            intent.putExtra(
-                "description2Swim",
-                productsSwim[holderSwim.adapterPosition].description2Swim
-            )
-            intent.putExtra("photo_urlSwim", productsSwim[holderSwim.adapterPosition].photoUrlSwim)
+        val viewSwim = LayoutInflater.from(parent.context).inflate(R.layout.product_row_swim, parent, false)
 
-            intent.putExtra("takenSwim", productsSwim[holderSwim.adapterPosition].takenSwim)
-
-            parent.context.startActivity(intent)
-        }
-
-        return holderSwim
+        return ViewHolder(viewSwim)
     }
 
     override fun getItemCount() = productsSwim.size

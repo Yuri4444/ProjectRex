@@ -3,7 +3,6 @@ package com.berezhnoyyuri9999.projectrex.ui.screens.fly.flyRu
 import android.annotation.SuppressLint
 import android.util.Log
 import com.berezhnoyyuri9999.projectrex.data.api.App
-import com.berezhnoyyuri9999.projectrex.data.local.room.dataFly.FlyEntityEn
 import com.berezhnoyyuri9999.projectrex.domain.services.Interactor
 import com.berezhnoyyuri9999.projectrex.ui.screens.fly.FlyContract
 import io.reactivex.android.schedulers.AndroidSchedulers
@@ -29,13 +28,6 @@ class PresenterFlyRu(var app: App) : FlyContract.FlyPresenter {
                 Log.e("ERROR", it.message ?: "")
             })
 
-//        interactor.getFlyRu()
-//            .observeOn(AndroidSchedulers.mainThread())
-//            .subscribe({
-//                view?.showFly(it)
-//            }, {
-//
-//            })
     }
 
     override fun bindView(view: FlyContract.FlyView) {
@@ -45,10 +37,5 @@ class PresenterFlyRu(var app: App) : FlyContract.FlyPresenter {
     override fun unBindView() {
         this.view = null
     }
-
-    override fun addDataToDb(list: FlyEntityEn) {
-
-    }
-
 
 }

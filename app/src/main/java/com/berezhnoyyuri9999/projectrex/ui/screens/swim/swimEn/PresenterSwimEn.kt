@@ -1,17 +1,12 @@
 package com.berezhnoyyuri9999.projectrex.ui.screens.swim.swimEn
 
 import android.annotation.SuppressLint
+import android.util.Log
 import com.berezhnoyyuri9999.projectrex.data.api.App
-import com.berezhnoyyuri9999.projectrex.data.model.ProductSwim
 import com.berezhnoyyuri9999.projectrex.domain.services.Interactor
 import com.berezhnoyyuri9999.projectrex.ui.screens.swim.SwimContract
-import com.google.gson.Gson
 import io.reactivex.android.schedulers.AndroidSchedulers
-import kotlinx.android.synthetic.main.fragment_swim.*
-import kotlinx.android.synthetic.main.fragment_swim.view.*
-import org.jetbrains.anko.doAsync
-import org.jetbrains.anko.uiThread
-import java.net.URL
+import io.reactivex.schedulers.Schedulers
 
 class PresenterSwimEn(app : App) : SwimContract.SwimPresenter {
 
@@ -25,12 +20,15 @@ class PresenterSwimEn(app : App) : SwimContract.SwimPresenter {
     override fun fetch() {
 
         interactor.getSwimEn()
+            .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe({
+                Log.e("SUCCESS", it.toString())
                 view?.showSwim(it)
             }, {
-
+                Log.e("ERROR", it.message ?: "")
             })
+
     }
 
     override fun bindView(view: SwimContract.SwimView) {

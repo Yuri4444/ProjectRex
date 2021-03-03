@@ -1,6 +1,5 @@
 package com.berezhnoyyuri9999.projectrex.ui.screens.land
 
-import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -8,15 +7,15 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.berezhnoyyuri9999.projectrex.R
-import com.berezhnoyyuri9999.projectrex.details.ProductDetails
-import com.berezhnoyyuri9999.projectrex.data.model.ProductLand
+import com.berezhnoyyuri9999.projectrex.data.local.room.GlobalEntity
 import com.squareup.picasso.Picasso
 
-class LandAdapter : RecyclerView.Adapter<LandAdapter.ViewHolder>() {
+class LandAdapter(var clickListener: (Int, GlobalEntity) -> Unit)
+    : RecyclerView.Adapter<LandAdapter.ViewHolder>() {
 
-    private val productsLand : MutableList<ProductLand> = ArrayList()
+    private val productsLand : MutableList<GlobalEntity> = ArrayList()
 
-    fun setData(newList : List<ProductLand>) {
+    fun setData(newList : List<GlobalEntity>) {
         productsLand.clear()
         productsLand.addAll(newList)
         notifyDataSetChanged()
@@ -24,17 +23,21 @@ class LandAdapter : RecyclerView.Adapter<LandAdapter.ViewHolder>() {
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val product = productsLand[position]
-        Picasso.get().load(productsLand[position].photoUrlRussian).into(holder.image)
-        Picasso.get().load(productsLand[position].rusCompare).into(holder.imageCompareRus)
+        Picasso.get().load(productsLand[position].photoUrl).into(holder.image)
+        Picasso.get().load(productsLand[position].compare).into(holder.imageCompareRus)
 
-        holder.title.text = product.titleRussian
-        holder.detail.text = product.detailRussian
-        holder.description1.text = product.description1Russian
-        holder.description2.text = product.description2Russian
+        holder.title.text = product.title
+        holder.detail.text = product.detail
+        holder.description1.text = product.description1
+        holder.description2.text = product.description2
 
-        holder.taken.text = product.takenRussian
+        holder.taken.text = product.taken
+
+        holder.itemView.setOnClickListener {
+            clickListener.invoke(holder.adapterPosition, productsLand[holder.adapterPosition])
+        }
         
-        if (product.isOnSaleRussian) {
+        if (product.isPredator) {
             holder.isOnSale.setImageResource(R.drawable.plato1r)
         } else {
             holder.isOnSale.setImageResource(R.drawable.travo1r)
@@ -43,21 +46,8 @@ class LandAdapter : RecyclerView.Adapter<LandAdapter.ViewHolder>() {
     }
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.product_row, parent, false)
-        val holder = ViewHolder(view)
-        view.setOnClickListener {
-            val intent = Intent(parent.context, ProductDetails::class.java)
 
-            intent.putExtra("title", productsLand[holder.adapterPosition].titleRussian)
-            intent.putExtra("detail", productsLand[holder.adapterPosition].detailRussian)
-            intent.putExtra("description1", productsLand[holder.adapterPosition].description1Russian)
-            intent.putExtra("description2", productsLand[holder.adapterPosition].description2Russian)
-            intent.putExtra("photo_url", productsLand[holder.adapterPosition].photoUrlRussian)
-            intent.putExtra("taken", productsLand[holder.adapterPosition].takenRussian)
-            intent.putExtra("photoCompare", productsLand[holder.adapterPosition].rusCompare)
-
-            parent.context.startActivity(intent)
-        }
-        return holder
+        return ViewHolder(view)
     }
 
     override fun getItemCount() = productsLand.size

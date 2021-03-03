@@ -9,23 +9,23 @@ import retrofit2.http.GET
 
 interface API {
 
-    @GET("v3/b674b5ce-78c1-41cc-a832-9528fae6d996")
-    fun getFlyApiEn(): Single<List<ProductFly>>
+    @GET("v3/6bc351bc-872c-4434-b222-c04e0238633a")
+    fun getFlyApiEn(): Observable<List<ProductFly>>
 
-    @GET("v3/6737e106-7206-45e9-9466-e1490b6bf0d6")
+    @GET("v3/91ba940d-3d42-4236-a506-fc631b488e45")
     fun getFlyApiRu(): Observable<List<ProductFly>>
 
-    @GET("v3/ddfb47d7-9229-43a0-96de-8b539d6f1ca9")
-    fun getLandApiEn(): Single<List<ProductLand>>
+    @GET("v3/9fcc3e0b-bb88-4065-9343-02cda50aa062")
+    fun getLandApiEn(): Observable<List<ProductLand>>
 
-    @GET("v3/9d7936b9-9cac-4b5d-80ac-6b4822efd299")
-    fun getLandApiRu(): Single<List<ProductLand>>
+    @GET("v3/18d53c92-dc60-4750-8413-b1586077b9b0")
+    fun getLandApiRu(): Observable<List<ProductLand>>
 
-    @GET("v3/e5a42244-cee2-4b0e-ac3f-0c22153e9cd9")
-    fun getSwimApiEn(): Single<List<ProductSwim>>
+    @GET("v3/8f42aad7-9f67-4df8-8f6b-a9895ac4c547")
+    fun getSwimApiEn(): Observable<List<ProductSwim>>
 
-    @GET("v3/4a79c952-0f8d-43a0-809c-aa796b59eaba")
-    fun getSwimApiRu(): Single<List<ProductSwim>>
+    @GET("v3/1ddb21d3-f78a-44a9-b486-17a90800ec96")
+    fun getSwimApiRu(): Observable<List<ProductSwim>>
 
 
     companion object {

@@ -1,78 +1,71 @@
 package com.berezhnoyyuri9999.projectrex.data.local.room
 
 import androidx.room.*
-import com.berezhnoyyuri9999.projectrex.data.local.room.dataFly.FlyEntityEn
-import com.berezhnoyyuri9999.projectrex.data.local.room.dataFly.FlyEntityRu
-import com.berezhnoyyuri9999.projectrex.data.local.room.dataLand.LandEntityEn
-import com.berezhnoyyuri9999.projectrex.data.local.room.dataLand.LandEntityRu
-import com.berezhnoyyuri9999.projectrex.data.local.room.dataSwim.SwimEntityEn
-import com.berezhnoyyuri9999.projectrex.data.local.room.dataSwim.SwimEntityRu
-
 
 @Dao
 interface GlobalDao {
     //Fly En
-//    @Query("SELECT * FROM fly_table_en")
-//    fun getAllFlyEn() : List<FlyEntityEn>
-//
-//    @Insert(onConflict = OnConflictStrategy.IGNORE)
-//    fun insertToFlyEn(fly : FlyEntityEn) : Long
-//
-//    @Delete
-//    fun deleteFlyEn(fly : FlyEntityEn)
+    @Query("SELECT * FROM global_table where type = 'FlyEng'")
+    fun getAllFlyEn() : List<GlobalEntity>
+
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    fun insertToFlyEn(fly : GlobalEntity) : Long
+
+    @Delete
+    fun deleteFlyEn(fly : GlobalEntity)
 
 //    ___________________
     //FlyRu
-    @Query("SELECT * FROM fly_table_ru")
-    fun getAllFlyRu() : List<FlyEntityRu>
+    @Query("SELECT * FROM global_table where type ='FlyRus'")
+    fun getAllFlyRu() : List<GlobalEntity>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    fun insertToFlyRu(fly : FlyEntityRu) : Long
+    fun insertToFlyRu(fly : GlobalEntity) : Long
 
     @Delete
-    fun deleteFlyRu(fly : FlyEntityRu)
+    fun deleteFlyRu(fly : GlobalEntity)
 ////    ___________________
 //
 //    //LandEn
-//    @Query("SELECT * FROM land_table_en")
-//    fun getAllLandEn() : List<LandEntityEn>
-//
-//    @Insert(onConflict = OnConflictStrategy.IGNORE)
-//    fun insertToLandEn(land : LandEntityEn) : Long
-//
-//    @Delete
-//    fun deleteLandEn(land : LandEntityEn)
+    @Query("SELECT * FROM global_table where type = 'landEn'")
+    fun getAllLandEn() : List<GlobalEntity>
+
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    fun insertToLandEn(land : GlobalEntity) : Long
+
+    @Delete
+    fun deleteLandEn(land : GlobalEntity)
 ////    ___________________
 //
 //    //LandRu
-//    @Query("SELECT * FROM land_table_ru")
-//    fun getAllLandRu() : List<LandEntityRu>
-//
-//    @Insert(onConflict = OnConflictStrategy.IGNORE)
-//    fun insertToLandRu(land : LandEntityRu) : Long
-//
-//    @Delete
-//    fun deleteLandRu(land : LandEntityRu)
+    @Query("SELECT * FROM global_table where type = 'landRu'")
+    fun getAllLandRu() : List<GlobalEntity>
+
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    fun insertToLandRu(land : GlobalEntity) : Long
+
+    @Delete
+    fun deleteLandRu(land : GlobalEntity)
 ////    ___________________
 //
 //    //SwimEn
-//    @Query("SELECT * FROM swim_table_en")
-//    fun getAllSwimEn() : List<SwimEntityEn>
-//
-//    @Insert(onConflict = OnConflictStrategy.IGNORE)
-//    fun insertToSwimEn(swim : SwimEntityEn) : Long
-//
-//    @Delete
-//    fun deleteSwimEn(swim : SwimEntityEn)
+    @Query("SELECT * FROM global_table where type = 'swimEn'")
+    fun getAllSwimEn() : List<GlobalEntity>
+
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    fun insertToSwimEn(swim : GlobalEntity) : Long
+
+    @Delete
+    fun deleteSwimEn(swim : GlobalEntity)
 ////    ___________________
 //
 //    //SwimRu
-//    @Query("SELECT * FROM swim_table_ru")
-//    fun getAllSwimRu() : List<SwimEntityRu>
-//
-//    @Insert(onConflict = OnConflictStrategy.IGNORE)
-//    fun insertToSwimRu(swim : SwimEntityRu) : Long
-//
-//    @Delete
-//    fun deleteSwimRu(swim : SwimEntityRu)
+    @Query("SELECT * FROM global_table where type = 'swimRu'")
+    fun getAllSwimRu() : List<GlobalEntity>
+
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    fun insertToSwimRu(swim : GlobalEntity) : Long
+
+    @Delete
+    fun deleteSwimRu(swim : GlobalEntity)
 }

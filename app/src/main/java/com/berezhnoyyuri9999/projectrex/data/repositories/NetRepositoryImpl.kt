@@ -13,7 +13,7 @@ class NetRepositoryImpl(private val netManager: RetrofitManager) :
 
     private val api by lazy { netManager.getApi() }
 
-    override fun getProductFlyEn(): Single<List<ProductFly>> {
+    override fun getProductFlyEn(): Observable<List<ProductFly>> {
         return api.getFlyApiEn()
     }
 
@@ -21,19 +21,19 @@ class NetRepositoryImpl(private val netManager: RetrofitManager) :
         return api.getFlyApiRu()
     }
 
-    override fun getProductLandEn(): Single<List<ProductLand>> {
+    override fun getProductLandEn(): Observable<List<ProductLand>> {
         return api.getLandApiEn()
     }
 
-    override fun getProductLandRu(): Single<List<ProductLand>> {
+    override fun getProductLandRu(): Observable<List<ProductLand>> {
         return api.getLandApiRu()
     }
 
-    override fun getProductSwimEn(): Single<List<ProductSwim>> {
+    override fun getProductSwimEn(): Observable<List<ProductSwim>> {
         return api.getSwimApiEn()
     }
 
-    override fun getProductSwimRu(): Single<List<ProductSwim>> {
+    override fun getProductSwimRu(): Observable<List<ProductSwim>> {
         return api.getSwimApiRu()
     }
 

@@ -1,11 +1,10 @@
 package com.berezhnoyyuri9999.projectrex.ui.screens.land
 
-import com.berezhnoyyuri9999.projectrex.data.local.room.dataFly.FlyEntityEn
-import com.berezhnoyyuri9999.projectrex.data.model.ProductLand
+import com.berezhnoyyuri9999.projectrex.data.local.room.GlobalEntity
 
 interface LandContract {
    interface LandView {
-       fun showLand(list : List<ProductLand>)
+       fun showLand(list : List<GlobalEntity>)
        fun showLoading()
    }
 
@@ -13,8 +12,6 @@ interface LandContract {
         fun fetch()
         fun bindView(view : LandView)
         fun unBindView()
-
-
     }
 
 

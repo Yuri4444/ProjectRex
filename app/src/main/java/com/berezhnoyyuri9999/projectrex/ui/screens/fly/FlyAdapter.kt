@@ -1,6 +1,5 @@
 package com.berezhnoyyuri9999.projectrex.ui.screens.fly
 
-import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -8,62 +7,53 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.berezhnoyyuri9999.projectrex.R
-import com.berezhnoyyuri9999.projectrex.data.local.room.dataFly.FlyEntityRu
-import com.berezhnoyyuri9999.projectrex.details.FlyActivityDetails
+import com.berezhnoyyuri9999.projectrex.data.local.room.GlobalEntity
 import com.squareup.picasso.Picasso
 
-class FlyAdapter : RecyclerView.Adapter<FlyAdapter.ViewHolder>() {
+class FlyAdapter(var clickListener: (Int, GlobalEntity) -> Unit )
+    : RecyclerView.Adapter<FlyAdapter.ViewHolder>() {
 
-    private val productsFly = mutableListOf<FlyEntityRu>()
+    private val productsSwim : MutableList<GlobalEntity> = ArrayList()
 
-    fun setData(newLine: List<FlyEntityRu>) {
-        productsFly.clear()
-        productsFly.addAll(newLine)
+    fun setData(newLine: List<GlobalEntity>) {
+        productsSwim.clear()
+        productsSwim.addAll(newLine)
         notifyDataSetChanged()
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val productSwim = productsFly[position]
-        Picasso.get().load(productsFly[position].photoUrlFly).into(holder.imageFly)
-        Picasso.get().load(productsFly[position].compareFly).into(holder.imageCompareFly)
+        val productSwim = productsSwim[position]
+        Picasso.get().load(productsSwim[position].photoUrl).into(holder.imageFly)
+        Picasso.get().load(productsSwim[position].compare).into(holder.imageCompareFly)
 
-        holder.titleFly.text = productSwim.titleFly
-        holder.detailsFly.text = productSwim.detailFly
+        holder.titleFly.text = productSwim.title
+        holder.detailsFly.text = productSwim.detail
+
+        holder.itemView.setOnClickListener {
+            clickListener.invoke(holder.adapterPosition, productsSwim[holder.adapterPosition])
+        }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val viewFly =
-            LayoutInflater.from(parent.context).inflate(R.layout.product_row_fly, parent, false)
-        val holderFly = ViewHolder(viewFly)
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.product_row_fly, parent, false)
 
-        viewFly.setOnClickListener {
-            val intent = Intent(parent.context, FlyActivityDetails::class.java)
-            intent.putExtra("titleFly", productsFly[holderFly.adapterPosition].titleFly)
-            intent.putExtra("detailFly", productsFly[holderFly.adapterPosition].detailFly)
-            intent.putExtra(
-                "description1Fly",
-                productsFly[holderFly.adapterPosition].description1Fly
-            )
-            intent.putExtra(
-                "description2Fly",
-                productsFly[holderFly.adapterPosition].description2Fly
-            )
-            intent.putExtra("photo_urlFly", productsFly[holderFly.adapterPosition].photoUrlFly)
-            intent.putExtra("photoCompare", productsFly[holderFly.adapterPosition].compareFly)
-            intent.putExtra("takenFly", productsFly[holderFly.adapterPosition].takenFly)
-            parent.context.startActivity(intent)
-        }
-
-        return holderFly
+        return ViewHolder(view)
     }
 
-    override fun getItemCount() = productsFly.size
+    override fun getItemCount() = productsSwim.size
 
     class ViewHolder(itemViewFly: View) : RecyclerView.ViewHolder(itemViewFly) {
-        val imageFly: ImageView = itemViewFly.findViewById(R.id.photoFly)
-        val titleFly: TextView = itemViewFly.findViewById(R.id.titleFly)
-        val detailsFly: TextView = itemViewFly.findViewById(R.id.detailFly)
-        val imageCompareFly: ImageView = itemViewFly.findViewById(R.id.im_compareFly)
+        var imageFly: ImageView
+        var titleFly: TextView
+        var detailsFly: TextView
+        var imageCompareFly: ImageView
+
+        init {
+            imageFly = itemViewFly.findViewById(R.id.photoFly)
+            titleFly = itemViewFly.findViewById(R.id.titleFly)
+            detailsFly = itemViewFly.findViewById(R.id.detailFly)
+            imageCompareFly = itemViewFly.findViewById(R.id.im_compareFly)
+        }
 
     }
 }

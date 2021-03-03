@@ -1,6 +1,6 @@
 package com.berezhnoyyuri9999.projectrex.data.repositories
 
-import com.berezhnoyyuri9999.projectrex.data.local.room.dataFly.FlyEntityRu
+import com.berezhnoyyuri9999.projectrex.data.local.room.GlobalEntity
 import com.berezhnoyyuri9999.projectrex.data.model.ProductFly
 import com.berezhnoyyuri9999.projectrex.data.model.ProductLand
 import com.berezhnoyyuri9999.projectrex.data.model.ProductSwim
@@ -8,37 +8,44 @@ import io.reactivex.Observable
 import io.reactivex.Single
 
 interface Repository {
+    //Y
+    fun getFlyEnDinos(): Observable<List<GlobalEntity>>
+    fun getLandEnDinos(): Observable<List<GlobalEntity>>
+    fun getLandRuDinos(): Observable<List<GlobalEntity>>
+    fun getSwimEnDinos(): Observable<List<GlobalEntity>>
+    fun getSwimRuDinos(): Observable<List<GlobalEntity>>
 
-    fun getFlyDinos(): Observable<List<FlyEntityRu>>
+
+    fun getFlyRuDinos(): Observable<List<GlobalEntity>>
 
     interface NetRepository {
-        fun getProductFlyEn(): Single<List<ProductFly>>
+        fun getProductFlyEn(): Observable<List<ProductFly>>
         fun getProductFlyRu(): Observable<List<ProductFly>>
 
-        fun getProductLandEn(): Single<List<ProductLand>>
-        fun getProductLandRu(): Single<List<ProductLand>>
+        fun getProductLandEn(): Observable<List<ProductLand>>
+        fun getProductLandRu(): Observable<List<ProductLand>>
 
 //    fun getProductSkeleton(productSkeleton : ProductSkeleton): Single<List<ProductSkeleton>>
 
-        fun getProductSwimEn(): Single<List<ProductSwim>>
-        fun getProductSwimRu(): Single<List<ProductSwim>>
+        fun getProductSwimEn(): Observable<List<ProductSwim>>
+        fun getProductSwimRu(): Observable<List<ProductSwim>>
     }
 
     interface RoomRepository {
-        //        fun insertFlyEn(note : FlyEntityEn) : Single<Boolean>
-        fun insertFlyRu(entity: FlyEntityRu): Observable<Boolean>
+        fun insertFlyEn(entity: GlobalEntity): Observable<Boolean>
+        fun insertFlyRu(entity: GlobalEntity): Observable<Boolean>
 
-        //        fun insertLandEn(note : LandEntityEn) : Single<Boolean>
-//        fun insertLandRu(note : LandEntityRu) : Single<Boolean>
-//        fun insertSwimEn(note : SwimEntityEn) : Single<Boolean>
-//        fun insertSwimRu(note : SwimEntityRu) : Single<Boolean>
+        fun insertLandEn(entity: GlobalEntity): Observable<Boolean>
+        fun insertLandRu(entity : GlobalEntity) : Observable<Boolean>
+        fun insertSwimEn(entity : GlobalEntity) : Observable<Boolean>
+        fun insertSwimRu(entity : GlobalEntity) : Observable<Boolean>
 //
-//        fun selectAllFlyEn() : Single<List<FlyEntityEn>>
-        fun selectAllFlyRu(): Observable<List<FlyEntityRu>>
-//        fun selectAllLandEn() : Single<List<LandEntityEn>>
-//        fun selectAllLandRu() : Single<List<LandEntityRu>>
-//        fun selectAllSwimEn() : Single<List<SwimEntityEn>>
-//        fun selectAllSwimRu() : Single<List<SwimEntityRu>>
+        fun selectAllFlyEn(): Observable<List<GlobalEntity>>
+        fun selectAllFlyRu(): Observable<List<GlobalEntity>>
+        fun selectAllLandEn() : Observable<List<GlobalEntity>>
+        fun selectAllLandRu() : Observable<List<GlobalEntity>>
+        fun selectAllSwimEn() : Observable<List<GlobalEntity>>
+        fun selectAllSwimRu() : Observable<List<GlobalEntity>>
     }
 
 }
