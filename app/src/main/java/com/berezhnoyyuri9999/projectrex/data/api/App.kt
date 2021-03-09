@@ -12,4 +12,6 @@ interface App {
 
     fun getRepository(): Repository
 
+    fun isConnected() : Boolean
+
 }

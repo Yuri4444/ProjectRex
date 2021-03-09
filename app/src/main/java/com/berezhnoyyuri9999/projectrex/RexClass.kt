@@ -2,6 +2,7 @@ package com.berezhnoyyuri9999.projectrex
 
 import android.app.Application
 import android.content.Context
+import android.net.ConnectivityManager
 import com.berezhnoyyuri9999.projectrex.data.api.App
 import com.berezhnoyyuri9999.projectrex.data.api.RetrofitManager
 import com.berezhnoyyuri9999.projectrex.data.local.room.AppRoomDatabase
@@ -11,6 +12,10 @@ import com.berezhnoyyuri9999.projectrex.data.repositories.Repository
 import com.berezhnoyyuri9999.projectrex.data.repositories.RepositoryImpl
 
 class RexClass : Application(), App {
+
+    private val connection: ConnectivityManager by lazy {
+        getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
+    }
 
     private val net by lazy { NetRepositoryImpl(RetrofitManager(this)) }
     lateinit var database: DatabaseRepository
@@ -30,6 +35,8 @@ class RexClass : Application(), App {
     override fun getRoomRepository(): DatabaseRepository = database
 
     override fun getRepository(): Repository = repository
+
+    override fun isConnected(): Boolean = connection.activeNetworkInfo!!.isConnected
 
     companion object {
         fun getApp(context: Context?): App {
