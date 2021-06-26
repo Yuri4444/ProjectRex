@@ -5,8 +5,6 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.appcompat.app.AppCompatActivity
-import androidx.core.app.ActivityOptionsCompat
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.berezhnoyyuri9999.projectrex.R
@@ -18,7 +16,6 @@ import com.berezhnoyyuri9999.projectrex.ui.screens.fly.FlyContract
 import kotlinx.android.synthetic.main.activity_fly_details.*
 import kotlinx.android.synthetic.main.fragment_fly_russian.*
 import kotlinx.android.synthetic.main.product_row_fly.*
-import kotlinx.android.synthetic.main.product_row_fly.photoFly
 
 class FlyRussianFragment : Fragment(), FlyContract.FlyView {
 
@@ -27,15 +24,15 @@ class FlyRussianFragment : Fragment(), FlyContract.FlyView {
     }
 
     private val flyAdapter by lazy {
-        FlyAdapter { pos, item ->
+        FlyAdapter { _, item ->
             val intent = Intent(context, FlyActivityDetails::class.java)
-            intent.putExtra("titleFly", item.title)
-            intent.putExtra("detailFly", item.detail)
-            intent.putExtra("description1Fly", item.description1)
-            intent.putExtra("description2Fly", item.description2)
-            intent.putExtra("photo_urlFly", item.photoUrl)
+            intent.putExtra("title", item.title)
+            intent.putExtra("detail", item.detail)
+            intent.putExtra("description1", item.description1)
+            intent.putExtra("description2", item.description2)
+            intent.putExtra("photo_url", item.photoUrl)
             intent.putExtra("photoCompare", item.compare)
-            intent.putExtra("takenFly", item.taken)
+            intent.putExtra("taken", item.taken)
             startActivity(intent)
         }
     }

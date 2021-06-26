@@ -13,7 +13,6 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.ProjectRex">
-<!--        <activity android:name=".details.ProductDetailsRussian"></activity>-->
         <activity
             android:name=".details.FlyActivityDetails"
             android:theme="@style/Theme.ProjectRex1" />

@@ -24,12 +24,12 @@ class SwimEnglishFragment : Fragment(), SwimContract.SwimView {
     private val swimAdapter by lazy {
         SwimAdapter { pos, item ->
             val intent = Intent(context, SwimActivityDetails::class.java)
-            intent.putExtra("titleSwim", item.title)
-            intent.putExtra("detailSwim", item.detail)
-            intent.putExtra("description1Swim", item.description1)
-            intent.putExtra("description2Swim", item.description2)
-            intent.putExtra("photo_urlSwim", item.photoUrl)
-            intent.putExtra("takenSwim", item.taken)
+            intent.putExtra("title", item.title)
+            intent.putExtra("detail", item.detail)
+            intent.putExtra("description1", item.description1)
+            intent.putExtra("description2", item.description2)
+            intent.putExtra("photo_url", item.photoUrl)
+            intent.putExtra("taken", item.taken)
             startActivity(intent)
         }
     }

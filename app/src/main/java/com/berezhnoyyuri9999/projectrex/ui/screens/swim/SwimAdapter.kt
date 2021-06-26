@@ -10,7 +10,8 @@ import com.berezhnoyyuri9999.projectrex.R
 import com.berezhnoyyuri9999.projectrex.data.local.room.GlobalEntity
 import com.squareup.picasso.Picasso
 
-class SwimAdapter(val clickListener: (Int, GlobalEntity) -> Unit) : RecyclerView.Adapter<SwimAdapter.ViewHolder>() {
+class SwimAdapter(private val clickListener: (Int, GlobalEntity) -> Unit) :
+    RecyclerView.Adapter<SwimAdapter.ViewHolder>() {
 
     private val productsSwim: MutableList<GlobalEntity> = ArrayList()
 
@@ -35,7 +36,8 @@ class SwimAdapter(val clickListener: (Int, GlobalEntity) -> Unit) : RecyclerView
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val viewSwim = LayoutInflater.from(parent.context).inflate(R.layout.product_row_swim, parent, false)
+        val viewSwim =
+            LayoutInflater.from(parent.context).inflate(R.layout.product_row_swim, parent, false)
 
         return ViewHolder(viewSwim)
     }
@@ -43,12 +45,20 @@ class SwimAdapter(val clickListener: (Int, GlobalEntity) -> Unit) : RecyclerView
     override fun getItemCount() = productsSwim.size
 
     class ViewHolder(itemViewSwim: View) : RecyclerView.ViewHolder(itemViewSwim) {
-        val imageSwim: ImageView = itemViewSwim.findViewById(R.id.photoSwim)
-        val titleSwim: TextView = itemViewSwim.findViewById(R.id.titleSwim)
-        val detailsSwim: TextView = itemViewSwim.findViewById(R.id.detailSwim)
-        val description1Swim: TextView = itemViewSwim.findViewById(R.id.description1Swim)
-        val description2Swim: TextView = itemViewSwim.findViewById(R.id.description2Swim)
-        val takenSwim: TextView = itemViewSwim.findViewById(R.id.takenSwim)
+        var imageSwim: ImageView
+        var titleSwim: TextView
+        var detailsSwim: TextView
+        var description1Swim: TextView
+        var description2Swim: TextView
+        var takenSwim: TextView
 
+        init {
+            imageSwim = itemViewSwim.findViewById(R.id.photoSwim)
+            titleSwim = itemViewSwim.findViewById(R.id.titleSwim)
+            detailsSwim = itemViewSwim.findViewById(R.id.detailSwim)
+            description1Swim = itemViewSwim.findViewById(R.id.description1Swim)
+            description2Swim = itemViewSwim.findViewById(R.id.description2Swim)
+            takenSwim = itemViewSwim.findViewById(R.id.takenSwim)
+        }
     }
 }

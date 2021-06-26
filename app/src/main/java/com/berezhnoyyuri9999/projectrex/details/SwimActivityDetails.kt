@@ -10,13 +10,17 @@ class SwimActivityDetails : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_swim_details)
+        getData()
+    }
 
-        val titleSwim = intent.getStringExtra("titleSwim")
-        val detailSwim = intent.getStringExtra("detailSwim")
-        val description1Swim = intent.getStringExtra("description1Swim")
-        val description2Swim = intent.getStringExtra("description2Swim")
-        val takenSwim = intent.getStringExtra("takenSwim")
-        val photoUrlSwim = intent.getStringExtra("photo_urlSwim")
+    private fun getData() {
+        val titleSwim = intent.getStringExtra("title")
+        val detailSwim = intent.getStringExtra("detail")
+        val description1Swim = intent.getStringExtra("description1")
+        val description2Swim = intent.getStringExtra("description2")
+        val takenSwim = intent.getStringExtra("taken")
+        val photoUrlSwim = intent.getStringExtra("photo_url")
+
         Picasso.get().load(photoUrlSwim).into(photoSwim)
 
         product_nameSwim.text = titleSwim

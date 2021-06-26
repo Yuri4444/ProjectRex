@@ -10,10 +10,10 @@ import com.berezhnoyyuri9999.projectrex.R
 import com.berezhnoyyuri9999.projectrex.data.local.room.GlobalEntity
 import com.squareup.picasso.Picasso
 
-class FlyAdapter(var clickListener: (Int, GlobalEntity) -> Unit )
-    : RecyclerView.Adapter<FlyAdapter.ViewHolder>() {
+class FlyAdapter(private var clickListener: (Int, GlobalEntity) -> Unit) :
+    RecyclerView.Adapter<FlyAdapter.ViewHolder>() {
 
-    private val productsSwim : MutableList<GlobalEntity> = ArrayList()
+    private val productsSwim: MutableList<GlobalEntity> = ArrayList()
 
     fun setData(newLine: List<GlobalEntity>) {
         productsSwim.clear()
@@ -24,10 +24,8 @@ class FlyAdapter(var clickListener: (Int, GlobalEntity) -> Unit )
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val productSwim = productsSwim[position]
         Picasso.get().load(productsSwim[position].photoUrl).into(holder.imageFly)
-        Picasso.get().load(productsSwim[position].compare).into(holder.imageCompareFly)
 
         holder.titleFly.text = productSwim.title
-        holder.detailsFly.text = productSwim.detail
 
         holder.itemView.setOnClickListener {
             clickListener.invoke(holder.adapterPosition, productsSwim[holder.adapterPosition])
@@ -35,7 +33,8 @@ class FlyAdapter(var clickListener: (Int, GlobalEntity) -> Unit )
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.product_row_fly, parent, false)
+        val view =
+            LayoutInflater.from(parent.context).inflate(R.layout.product_row_fly, parent, false)
 
         return ViewHolder(view)
     }
@@ -45,14 +44,10 @@ class FlyAdapter(var clickListener: (Int, GlobalEntity) -> Unit )
     class ViewHolder(itemViewFly: View) : RecyclerView.ViewHolder(itemViewFly) {
         var imageFly: ImageView
         var titleFly: TextView
-        var detailsFly: TextView
-        var imageCompareFly: ImageView
 
         init {
             imageFly = itemViewFly.findViewById(R.id.photoFly)
             titleFly = itemViewFly.findViewById(R.id.titleFly)
-            detailsFly = itemViewFly.findViewById(R.id.detailFly)
-            imageCompareFly = itemViewFly.findViewById(R.id.im_compareFly)
         }
 
     }

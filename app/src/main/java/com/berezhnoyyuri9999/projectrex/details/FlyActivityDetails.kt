@@ -10,13 +10,16 @@ class FlyActivityDetails : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_fly_details)
+        getData()
+    }
 
-        val titleFly = intent.getStringExtra("titleFly")
-        val detailFly = intent.getStringExtra("detailFly")
-        val description1Fly = intent.getStringExtra("description1Fly")
-        val description2Fly = intent.getStringExtra("description2Fly")
-        val takenFly = intent.getStringExtra("takenFly")
-        val photoUrlFly = intent.getStringExtra("photo_urlFly")
+    private fun getData() {
+        val titleFly = intent.getStringExtra("title")
+        val detailFly = intent.getStringExtra("detail")
+        val description1Fly = intent.getStringExtra("description1")
+        val description2Fly = intent.getStringExtra("description2")
+        val takenFly = intent.getStringExtra("taken")
+        val photoUrlFly = intent.getStringExtra("photo_url")
         val photoCompareFly = intent.getStringExtra("photoCompare")
 
         Picasso.get().load(photoCompareFly).into(im_compareFly)

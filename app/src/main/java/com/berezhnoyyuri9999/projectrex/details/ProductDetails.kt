@@ -10,15 +10,19 @@ class ProductDetails : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.product_details)
+        getData()
+    }
 
+    private fun getData() {
         val title = intent.getStringExtra("title")
         val detail = intent.getStringExtra("detail")
         val description1 = intent.getStringExtra("description1")
         val description2 = intent.getStringExtra("description2")
         val taken = intent.getStringExtra("taken")
         val photoUrl = intent.getStringExtra("photo_url")
-        Picasso.get().load(photoUrl).into(photo)
         val photoCompareRus = intent.getStringExtra("photoCompare")
+
+        Picasso.get().load(photoUrl).into(photo)
         Picasso.get().load(photoCompareRus).into(im_compare)
 
         product_name.text = title
